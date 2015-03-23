@@ -52,3 +52,5 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 /agenda/nbproject/private/
+/agenda/build/
+/agenda/dist/
