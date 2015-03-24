@@ -1,5 +1,5 @@
 package com.agenda.model;
-// Generated 23/03/2015 05:32:08 PM by Hibernate Tools 4.3.1
+// Generated 23/03/2015 08:38:43 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
