@@ -1,12 +1,14 @@
 package com.agenda.model;
 // Generated 23/03/2015 08:38:43 PM by Hibernate Tools 4.3.1
 
-
+import java.util.Set;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -22,6 +24,7 @@ public class Proyecto  implements java.io.Serializable {
      private Integer proyectoId;
      private String nombre;
      private String descripcion;
+     private Set<Tarea> Tareas;
 
     public Proyecto() {
     }
@@ -32,6 +35,7 @@ public class Proyecto  implements java.io.Serializable {
     }
    
      @Id @GeneratedValue(strategy=IDENTITY)
+     @OneToMany(mappedBy="proyecto", cascade = CascadeType.ALL)
 
     
     @Column(name="proyecto_id", unique=true, nullable=false)
