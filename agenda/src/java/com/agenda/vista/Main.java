@@ -20,8 +20,7 @@ public class Main {
         Proyecto proyecto = new Proyecto("Proyecto Hibernate", "Primer Inser desde Hibernate");
         
         int id = pro.create(proyecto);
-        System.out.println(id);
-        
+        System.out.println(pro.findById(id).getNombre());   
     }
     
 }
