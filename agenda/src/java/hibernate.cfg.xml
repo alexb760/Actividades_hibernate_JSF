@@ -8,6 +8,8 @@
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">root</property>
     <mapping resource="com/agenda/model/Tarea.hbm.xml"/>
+    <mapping resource="com/agenda/model/Notificaciones.hbm.xml"/>
+    <mapping resource="com/agenda/model/Persona.hbm.xml"/>
     <mapping resource="com/agenda/model/Proyecto.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
