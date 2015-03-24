@@ -7,6 +7,9 @@
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/agenda?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">root</property>
+    <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.format_sql">true</property>
+    <property name="hibernate.current_session_context_class">thread</property>
     <mapping resource="com/agenda/model/Tarea.hbm.xml"/>
     <mapping resource="com/agenda/model/Notificaciones.hbm.xml"/>
     <mapping resource="com/agenda/model/Persona.hbm.xml"/>
