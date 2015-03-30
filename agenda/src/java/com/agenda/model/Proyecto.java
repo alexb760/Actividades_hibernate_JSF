@@ -1,7 +1,10 @@
 package com.agenda.model;
 // Generated 23/03/2015 08:38:43 PM by Hibernate Tools 4.3.1
 
+
 import java.util.Iterator;
+
+
 import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -22,10 +25,11 @@ import javax.persistence.Table;
 public class Proyecto  implements java.io.Serializable {
 
 
-     private Integer proyectoId;
+     //private Integer proyectoId;
      private String nombre;
      private String descripcion;
      private Set<Tarea> Tareas;
+     private Integer proyectoid;
 
     public Proyecto() {
     }
@@ -79,6 +83,15 @@ public class Proyecto  implements java.io.Serializable {
 
     public Iterator iterator() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Id
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
 

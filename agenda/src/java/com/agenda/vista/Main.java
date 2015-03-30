@@ -19,8 +19,10 @@ public class Main {
 
     public static TareaDaoImpl TareaDao = new TareaDaoImpl();
     public static PersonaDaoImpl PersonaDao = new PersonaDaoImpl();
+
     public static ProyectoDaoImpl ProyectoDao = new ProyectoDaoImpl();
     public static Proyecto proyecto;
+
     public static Tarea tarea;
     public static Persona persona;
     public static String resultado = "";
@@ -176,4 +178,5 @@ public class Main {
         }
     }
     
+
 }

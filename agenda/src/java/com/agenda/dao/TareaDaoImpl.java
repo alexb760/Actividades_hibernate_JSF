@@ -11,6 +11,7 @@ import com.agenda.util.HibernateUtil;
 import java.io.Serializable;
 import org.hibernate.HibernateException;
 //import util.HibernateUtil;
+//import util.HibernateUtil;
 
 /**
  *
@@ -26,6 +27,7 @@ public class TareaDaoImpl extends GenericDaoImpl<Tarea, Integer> implements Tare
             session = HibernateUtil.getSession();
             tx = session.beginTransaction();
             list = session.createQuery("from Tarea as ta where ta.fecha >= DATE(NOW())").list();
+
             tx.commit();
         }catch(HibernateException e){
             list = null;
