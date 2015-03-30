@@ -14,4 +14,5 @@ import java.io.Serializable;
  */
 public class PersonaDaoImpl extends GenericDaoImpl<Persona, Integer> implements PersonaDao{
     
+    
 }

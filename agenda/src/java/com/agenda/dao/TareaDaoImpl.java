@@ -5,8 +5,12 @@
  */
 package com.agenda.dao;
 
+import java.util.*;
 import com.agenda.model.Tarea;
+import com.agenda.util.HibernateUtil;
 import java.io.Serializable;
+import org.hibernate.HibernateException;
+//import util.HibernateUtil;
 
 /**
  *
@@ -14,4 +18,50 @@ import java.io.Serializable;
  */
 public class TareaDaoImpl extends GenericDaoImpl<Tarea, Integer> implements TareaDao{
     
+    public List <Tarea> getTareaHoy(){
+        
+        List <Tarea> list;
+        try{
+            java.util.Date fecha = new Date();
+            session = HibernateUtil.getSession();
+            tx = session.beginTransaction();
+            list = session.createQuery("from Tarea as ta where ta.fecha >= DATE(NOW())").list();
+            tx.commit();
+        }catch(HibernateException e){
+            list = null;
+            tx.rollback();
+            throw e;
+        }
+        return list;
+    }
+    
+    public List<Tarea> getPendientes(){
+        List<Tarea> list;
+        try{
+            session = HibernateUtil.getSession();
+            tx = session.beginTransaction();
+            list = session.createQuery("from Tarea as ta where ta.estadoTarea = True").list();
+            tx.commit();
+        }catch(HibernateException e){
+            list = null;
+            tx.rollback();
+            throw e;
+        }
+        return list;
+    }
+    
+    public List<Tarea> getProyectos(){
+        List<Tarea> list;
+        try{
+            session = HibernateUtil.getSession();
+            tx = session.beginTransaction();
+            list = session.createQuery("from Tarea as ta where ta.estadoTarea = True").list();
+            tx.commit();
+        }catch(HibernateException e){
+            list = null;
+            tx.rollback();
+            throw e;
+        }
+        return list;
+    }
 }

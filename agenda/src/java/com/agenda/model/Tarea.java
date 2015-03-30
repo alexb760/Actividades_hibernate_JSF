@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -30,6 +31,8 @@ public class Tarea  implements java.io.Serializable {
      private boolean estadoTarea;
      private int personaId;
      private int proyectoId;
+     private Persona persona;
+     private Proyecto proyecto;
 
     public Tarea() {
     }
@@ -42,6 +45,16 @@ public class Tarea  implements java.io.Serializable {
        this.estadoTarea = estadoTarea;
        this.personaId = personaId;
        this.proyectoId = proyectoId;
+    }
+    
+    public Tarea(String nombre, String descripcion, Date fecha, int ejecucion, boolean estadoTarea, Persona persona, Proyecto proyecto) {
+       this.nombre = nombre;
+       this.descripcion = descripcion;
+       this.fecha = fecha;
+       this.ejecucion = ejecucion;
+       this.estadoTarea = estadoTarea;
+       this.persona = persona;
+       this.proyecto = proyecto;
     }
    
      @Id @GeneratedValue(strategy=IDENTITY)
@@ -126,9 +139,23 @@ public class Tarea  implements java.io.Serializable {
         this.proyectoId = proyectoId;
     }
 
+    @ManyToOne
+    public Persona getPersona(){
+        return persona;
+    }
 
-
-
+    public void setPersona(Persona persona){
+        this.persona = persona;
+    }
+    
+    @ManyToOne
+    public Proyecto getProyecto(){
+        return proyecto;
+    }
+    
+    public void setProyecto(Proyecto proyecto){
+        this.proyecto = proyecto;
+    }
 }
 
 

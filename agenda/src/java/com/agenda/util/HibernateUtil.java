@@ -18,7 +18,7 @@ import org.hibernate.Session;
 public class HibernateUtil {
 
     private static final SessionFactory sessionFactory;
-    private static  Session session;
+    private static  Session session ;
     
     static {
         try {

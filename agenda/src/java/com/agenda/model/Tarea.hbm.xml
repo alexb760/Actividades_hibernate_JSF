@@ -23,11 +23,18 @@
         <property name="estadoTarea" type="boolean">
             <column name="estado_tarea" not-null="true" />
         </property>
-        <property name="personaId" type="int">
+        <!--<property name="personaId" type="int">
             <column name="persona_id" not-null="true" />
-        </property>
-        <property name="proyectoId" type="int">
+        </property>-->
+        <!--<many-to-one name="personaId" column="persona_id" class="Persona" not-null="true"></many-to-one>-->
+        <many-to-one name="persona">
+            <column name="persona_id"></column>
+        </many-to-one>
+        <!--<property name="proyectoId" type="int">
             <column name="proyecto_id" not-null="true" />
-        </property>
+        </property>-->
+        <many-to-one name="proyecto">
+            <column name="proyecto_id"></column>
+        </many-to-one>
     </class>
 </hibernate-mapping>
